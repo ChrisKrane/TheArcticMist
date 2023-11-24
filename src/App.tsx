@@ -1,13 +1,16 @@
-import './App.css';
-import {ComponentTest} from './Components/ComponentTest';
-import { Owner } from './Components/Owner';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './Pages/Home';
+import About from './Pages/About';
 
 function App() {
   return (
     <div className='App'>
-      <ComponentTest name="Christer" testNumber={3} isLoggedIn={true}/>
-      <Owner name={{first: 'Christer', middle: 'Justad', last: 'Krane'}}/>
-      
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
